@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'PT Sans', sans-serif;
+}
+.wraper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(115.36deg, #e96bcc 0%, #045285 100%);
+  background-position: center;
+  background-size: auto;
+}
+.mean_block {
+  background: #f4ecff;
+  overflow: hidden;
+  max-width: 420px;
+
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 20px;
+}
+.mean_block--heder {
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mean_block--heder img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.mean_block--heder h3 {
+  margin: 20px 0 10px 0;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 120%;
+  color: #3c474c;
+}
+.mean_block--heder p {
+  color: #3c474c;
+  line-height: 140%;
+  font-weight: normal;
+}
+.mean_block--content {
+  padding: 30px 30px 30px 30px;
+  font-size: 28px;
+  color: #34495e;
+  font-weight: bold;
+  text-align: center;
+  background: white;
+  border-bottom: 1px solid #dce0df;
+}
+.mean_block--footer {
+  background: white;
+  padding: 30px 30px 30px 30px;
+}
+.mean_block--footer a {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  background: rgb(50, 170, 221);
+  text-decoration: none;
+  border: 2px solid rgb(50, 170, 221);
+  border-radius: 4px;
+}
+.mean_block--footer svg {
+  color: white;
+  width: 16px;
+  height: 16px;
+}
+.mean_block--footer p {
+  flex: 1;
+  margin: 0 86px 0 102px;
+  color: white;
+  font-weight: bold;
+  line-height: 120%;
+}
+
+@media (max-width: 480px) {
+  .mean_block--footer p {
+    margin: 0 70px 0 86px;
+  }
+}
