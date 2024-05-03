@@ -8,87 +8,177 @@ body {
   font-family: 'PT Sans', sans-serif;
 }
 .wraper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: linear-gradient(115.36deg, #e96bcc 0%, #045285 100%);
+  position: relative;
+  height: 100vh;
+  background-image: url('./asets/bg-img.jpeg');
   background-position: center;
   background-size: auto;
 }
-.mean_block {
-  background: #f4ecff;
-  overflow: hidden;
-  max-width: 420px;
-
-  border-radius: 15px;
+.wraper-opaciti {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  background: #000;
+}
+.mean {
+  padding: 0 20px;
+  width: 100%;
   display: flex;
+  position: absolute;
+  margin-top: 140px;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin: 0 20px;
+  color: #fff;
 }
-.mean_block--heder {
-  padding: 30px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.title {
+  font-size: 76px;
+  margin-bottom: 40px;
 }
-.mean_block--heder img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-}
-.mean_block--heder h3 {
-  margin: 20px 0 10px 0;
-  font-size: 22px;
-  font-weight: bold;
-  line-height: 120%;
-  color: #3c474c;
-}
-.mean_block--heder p {
-  color: #3c474c;
-  line-height: 140%;
-  font-weight: normal;
-}
-.mean_block--content {
-  padding: 30px 30px 30px 30px;
-  font-size: 28px;
-  color: #34495e;
-  font-weight: bold;
+.title_little {
   text-align: center;
-  background: white;
-  border-bottom: 1px solid #dce0df;
+}
+.rules {
+  max-width: 900px;
+  margin-top: 40px;
+  padding: 40px;
+
+  border-radius: 20px;
+
+  -webkit-backdrop-filter: blur(5px);
+  background-color: rgb(255 255 255 / 10%);
+  backdrop-filter: blur(5px);
+}
+.rules h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.rules li {
+  font-size: 20px;
+  margin-bottom: 15px;
 }
 .mean_block--footer {
-  background: white;
   padding: 30px 30px 30px 30px;
 }
 .mean_block--footer a {
+  position: relative;
   width: 100%;
   display: flex;
   align-items: center;
   padding: 10px 16px;
-  background: rgb(50, 170, 221);
+  background: repeating-conic-gradient(
+    from var(--a),
+    #29730c 0%,
+    #29730c 10%,
+    transparent 5%,
+    transparent 35%,
+    #29730c 50%
+  );
   text-decoration: none;
-  border: 2px solid rgb(50, 170, 221);
-  border-radius: 4px;
+  animation: animate 3s linear infinite;
+  /* animation: jump-shaking 2s linear infinite; */
+  border-radius: 999px;
+  transition: all .3s ease-in;
+}
+.mean_block--footer a:hover  {
+  transform: scale(1.1);
+}
+
+
+.mean_block--footer a::after {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  background: #46465bff;
+  border-radius: 999px;
+}
+@property --a {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+@keyframes animate {
+  0% {
+    --a: 0deg;
+  }
+  100% {
+    --a: 360deg;
+  }
+}
+@keyframes jump-shaking {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateY(-9px);
+  }
+  35% {
+    transform: translateY(-9px) rotate(7deg);
+  }
+  55% {
+    transform: translateY(-9px) rotate(-7deg);
+  }
+  65% {
+    transform: translateY(-9px) rotate(7deg);
+  }
+  75% {
+    transform: translateY(-9px) rotate(-7deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
 }
 .mean_block--footer svg {
-  color: white;
-  width: 16px;
-  height: 16px;
+  color: rgb(50, 170, 221);
+  width: 20px;
+  height: 20px;
+  z-index: 100;
 }
 .mean_block--footer p {
+  z-index: 100;
+  font-size: 26px;
   flex: 1;
   margin: 0 86px 0 102px;
-  color: white;
-  font-weight: bold;
+  color: rgb(50, 170, 221);
+  font-weight: 500;
   line-height: 120%;
 }
 
 @media (max-width: 480px) {
+  .title {
+    font-size: 36px;
+  }
+  .mean {
+    margin-top: 40px;
+    padding: 0 20px;
+  }
+  .title_little {
+    font-size: 20px;
+    text-align: center;
+  }
+  .rules h2 {
+    font-size: 24px;
+  }
+  .rules li {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
   .mean_block--footer p {
-    margin: 0 70px 0 86px;
+    font-size: 20px;
+    margin: 0 57px 0 70px;
+  }
+}
+@media (max-width: 400px) {
+  .title {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  .mean_block--footer p {
+    font-size: 20px;
+    margin: 0 28px 0 59px;
   }
 }
