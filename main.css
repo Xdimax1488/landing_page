@@ -147,6 +147,15 @@ body {
   font-weight: 500;
   line-height: 120%;
 }
+@media (max-width: 900px) {
+  .title {
+    font-size: 50px;
+  }
+  .mean {
+    margin-top: 80px;
+    
+  }
+}
 
 @media (max-width: 480px) {
   .title {
@@ -181,4 +190,38 @@ body {
     font-size: 20px;
     margin: 0 28px 0 59px;
   }
-}
+  .mean{
+    margin-top: 20px;
+  }
+  .title_little {
+    font-size: 16px;
+    text-align: center;
+  }}
+  @media (max-width: 415px) {
+    
+    .mean_block--footer  {
+    
+      padding: 10px;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .title {
+      font-size: 25px;
+    }
+    .rules h2{
+      font-size: 20px;
+    }
+    .rules{
+      padding: 15px;
+      
+    }
+    .mean_block--footer p {
+    
+      margin: 0 15px 0 55px;
+    }
+    .mean_block--footer  {
+    
+      padding: 10px;
+    }
+  }
